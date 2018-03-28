@@ -14,6 +14,8 @@
 		CF946D8A206C2ADA00808232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF946D89206C2ADA00808232 /* Assets.xcassets */; };
 		CF946D8D206C2ADA00808232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF946D8B206C2ADA00808232 /* LaunchScreen.storyboard */; };
 		CF946D95206C2EB500808232 /* TodoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF946D94206C2EB500808232 /* TodoRouter.swift */; };
+		CF946D97206C2F6300808232 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF946D96206C2F6300808232 /* Todo.swift */; };
+		CF946D99206C2FF800808232 /* Todo+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF946D98206C2FF800808232 /* Todo+Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		CF946D8C206C2ADA00808232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF946D8E206C2ADA00808232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF946D94206C2EB500808232 /* TodoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRouter.swift; sourceTree = "<group>"; };
+		CF946D96206C2F6300808232 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		CF946D98206C2FF800808232 /* Todo+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+Networking.swift"; sourceTree = "<group>"; };
 		F4DD6631897FE53BD7E18B85 /* Pods-grokRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grokRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-grokRouter/Pods-grokRouter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,8 @@
 				CF946D82206C2ADA00808232 /* AppDelegate.swift */,
 				CF946D84206C2ADA00808232 /* ViewController.swift */,
 				CF946D94206C2EB500808232 /* TodoRouter.swift */,
+				CF946D96206C2F6300808232 /* Todo.swift */,
+				CF946D98206C2FF800808232 /* Todo+Networking.swift */,
 				CF946D86206C2ADA00808232 /* Main.storyboard */,
 				CF946D89206C2ADA00808232 /* Assets.xcassets */,
 				CF946D8B206C2ADA00808232 /* LaunchScreen.storyboard */,
@@ -223,6 +229,8 @@
 				CF946D95206C2EB500808232 /* TodoRouter.swift in Sources */,
 				CF946D85206C2ADA00808232 /* ViewController.swift in Sources */,
 				CF946D83206C2ADA00808232 /* AppDelegate.swift in Sources */,
+				CF946D99206C2FF800808232 /* Todo+Networking.swift in Sources */,
+				CF946D97206C2F6300808232 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
