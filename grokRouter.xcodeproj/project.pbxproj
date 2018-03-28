@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38B3CBF7E0B3D23708E14C46 /* Pods_grokRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7140E5819B9D6176E457E8 /* Pods_grokRouter.framework */; };
 		CF946D83206C2ADA00808232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF946D82206C2ADA00808232 /* AppDelegate.swift */; };
 		CF946D85206C2ADA00808232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF946D84206C2ADA00808232 /* ViewController.swift */; };
 		CF946D88206C2ADA00808232 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF946D86206C2ADA00808232 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B7140E5819B9D6176E457E8 /* Pods_grokRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grokRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7941AAAB97E9250B3B29E5B2 /* Pods-grokRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grokRouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-grokRouter/Pods-grokRouter.release.xcconfig"; sourceTree = "<group>"; };
 		CF946D7F206C2ADA00808232 /* grokRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grokRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF946D82206C2ADA00808232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF946D84206C2ADA00808232 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		CF946D89206C2ADA00808232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF946D8C206C2ADA00808232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF946D8E206C2ADA00808232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4DD6631897FE53BD7E18B85 /* Pods-grokRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grokRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-grokRouter/Pods-grokRouter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B3CBF7E0B3D23708E14C46 /* Pods_grokRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AF79316C16745D22E79DB33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B7140E5819B9D6176E457E8 /* Pods_grokRouter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF946D76206C2ADA00808232 = {
 			isa = PBXGroup;
 			children = (
 				CF946D81206C2ADA00808232 /* grokRouter */,
 				CF946D80206C2ADA00808232 /* Products */,
+				DA75345514E52E3FB5EA1FF3 /* Pods */,
+				3AF79316C16745D22E79DB33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = grokRouter;
 			sourceTree = "<group>";
 		};
+		DA75345514E52E3FB5EA1FF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4DD6631897FE53BD7E18B85 /* Pods-grokRouter.debug.xcconfig */,
+				7941AAAB97E9250B3B29E5B2 /* Pods-grokRouter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF946D91206C2ADA00808232 /* Build configuration list for PBXNativeTarget "grokRouter" */;
 			buildPhases = (
+				6168E424EDE3A0A5D44D00C8 /* [CP] Check Pods Manifest.lock */,
 				CF946D7B206C2ADA00808232 /* Sources */,
 				CF946D7C206C2ADA00808232 /* Frameworks */,
 				CF946D7D206C2ADA00808232 /* Resources */,
+				247D794691B7F305F53497D4 /* [CP] Embed Pods Frameworks */,
+				2987DF8E329563C8933360D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		247D794691B7F305F53497D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-grokRouter/Pods-grokRouter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-grokRouter/Pods-grokRouter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2987DF8E329563C8933360D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-grokRouter/Pods-grokRouter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6168E424EDE3A0A5D44D00C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-grokRouter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF946D7B206C2ADA00808232 /* Sources */ = {
@@ -272,6 +353,7 @@
 		};
 		CF946D92206C2ADA00808232 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4DD6631897FE53BD7E18B85 /* Pods-grokRouter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +369,7 @@
 		};
 		CF946D93206C2ADA00808232 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7941AAAB97E9250B3B29E5B2 /* Pods-grokRouter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

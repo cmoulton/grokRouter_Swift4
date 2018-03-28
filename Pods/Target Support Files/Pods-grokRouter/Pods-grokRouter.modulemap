@@ -1,0 +1,6 @@
+framework module Pods_grokRouter {
+  umbrella header "Pods-grokRouter-umbrella.h"
+
+  export *
+  module * { export * }
+}
