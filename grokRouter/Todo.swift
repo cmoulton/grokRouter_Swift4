@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Todo {
+struct Todo: Codable {
   var title: String
   var id: Int?
   var userId: Int
