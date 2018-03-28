@@ -13,13 +13,14 @@ enum TodoRouter: URLRequestConvertible {
   static let baseURLString = "https://jsonplaceholder.typicode.com/"
 
   case get(Int)
+  case getAll
   case create([String: Any])
   case delete(Int)
 
   func asURLRequest() throws -> URLRequest {
     var method: HTTPMethod {
       switch self {
-      case .get:
+      case .get, .getAll:
         return .get
       case .create:
         return .post
@@ -30,7 +31,7 @@ enum TodoRouter: URLRequestConvertible {
 
     let params: ([String: Any]?) = {
       switch self {
-      case .get, .delete:
+      case .get, .delete, .getAll:
         return nil
       case .create(let newTodo):
         return (newTodo)
@@ -43,7 +44,7 @@ enum TodoRouter: URLRequestConvertible {
       switch self {
       case .get(let number):
         relativePath = "todos/\(number)"
-      case .create:
+      case .create, .getAll:
         relativePath = "todos"
       case .delete(let number):
         relativePath = "todos/\(number)"

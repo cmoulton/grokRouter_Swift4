@@ -14,7 +14,7 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    fetchTodo()
+    fetchAllTodos()
   }
 
   func fetchTodo() {
@@ -33,6 +33,13 @@ class ViewController: UIViewController {
       // success!
       print(todo.description())
       print(todo.title)
+    }
+  }
+
+  func fetchAllTodos() {
+    Todo.allTodos() {
+      result in
+      print(result)
     }
   }
 

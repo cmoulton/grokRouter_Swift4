@@ -88,4 +88,37 @@ extension Todo {
     }
   }
 
+  static func allTodos(completionHandler: @escaping (Result<[Todo]>) -> Void) {
+    Alamofire.request(TodoRouter.getAll)
+      .responseData { response in
+        let decoder = JSONDecoder()
+        completionHandler(decoder.decodeResponse([Todo].self, from: response))
+    }
+  }
+
+  private static func todosFromCodableResponse(_ response: DataResponse<Data>) -> Result<[Todo]> {
+    guard response.result.error == nil else {
+      // got an error in getting the data, need to handle it
+      print(response.result.error!)
+      return .failure(response.result.error!)
+    }
+
+    // make sure we got JSON and it's a dictionary
+    guard let responseData = response.result.value else {
+      print("didn't get any data from API")
+      return .failure(BackendError.parsing(reason:
+        "Did not get data in response"))
+    }
+
+    // turn data into Todo
+    let decoder = JSONDecoder()
+    do {
+      let todos = try decoder.decode([Todo].self, from: responseData)
+      return .success(todos)
+    } catch {
+      print("error trying to convert data to JSON")
+      print(error)
+      return .failure(error)
+    }
+  }
 }

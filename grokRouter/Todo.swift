@@ -21,6 +21,8 @@ struct Todo: Codable {
     self.completed = completedStatus
   }
 
+  static let endpointForTodos: String = "https://jsonplaceholder.typicode.com/todos/"
+
   func description() -> String {
     return "ID: \(self.id ?? 0), " +
       "User ID: \(self.userId)" +
