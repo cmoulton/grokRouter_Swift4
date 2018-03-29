@@ -14,7 +14,7 @@ enum TodoRouter: URLRequestConvertible {
 
   case get(Int)
   case getAll
-  case create([String: Any])
+  case create(Data)
   case delete(Int)
 
   func asURLRequest() throws -> URLRequest {
@@ -29,12 +29,12 @@ enum TodoRouter: URLRequestConvertible {
       }
     }
 
-    let params: ([String: Any]?) = {
+    let body: Data? = {
       switch self {
-      case .get, .delete, .getAll:
+      case .create(let jsonAsData):
+        return jsonAsData
+      default:
         return nil
-      case .create(let newTodo):
-        return (newTodo)
       }
     }()
 
@@ -59,8 +59,7 @@ enum TodoRouter: URLRequestConvertible {
 
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
-
-    let encoding = JSONEncoding.default
-    return try encoding.encode(urlRequest, with: params)
+    urlRequest.httpBody = body
+    return urlRequest
   }
 }
