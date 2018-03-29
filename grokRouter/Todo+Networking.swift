@@ -11,6 +11,7 @@ import Alamofire
 
 enum BackendError: Error {
   case parsing(reason: String)
+  case urlError(reason: String)
 }
 
 extension Todo {

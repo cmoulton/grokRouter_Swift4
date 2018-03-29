@@ -13,8 +13,7 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
-    createTodo()
+    getUser(1)
   }
 
   func fetchTodo() {
@@ -66,5 +65,24 @@ class ViewController: UIViewController {
       // success!
       print(todoIdValue)
     }
+  }
+
+  func getUser(_ idNumber: Int) {
+    User.userByID(idNumber, completionHandler: { (user, error) in
+      if let error = error {
+        // got an error in getting the data, need to handle it
+        print("error calling GET user")
+        print(error)
+        return
+      }
+      guard let user = user else {
+        print("error getting user: result is nil")
+        return
+      }
+      // success :)
+      debugPrint(user)
+      print(user.name)
+      print(user.address.city)
+    })
   }
 }
