@@ -15,17 +15,6 @@ enum BackendError: Error {
 }
 
 extension Todo {
-  func toJSON() -> [String: Any] {
-    var json = [String: Any]()
-    json["title"] = title
-    if let id = id {
-      json["id"] = id
-    }
-    json["userId"] = userId
-    json["completed"] = completed
-    return json
-  }
-  
   static func todoByID(id: Int, completionHandler: @escaping (Result<Todo>) -> Void) {
     Alamofire.request(TodoRouter.get(id))
       .responseData { response in
