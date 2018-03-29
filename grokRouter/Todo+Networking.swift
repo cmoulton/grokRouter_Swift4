@@ -14,6 +14,10 @@ enum BackendError: Error {
   case urlError(reason: String)
 }
 
+struct CreateTodoResult: Codable {
+  var id: Int
+}
+
 extension Todo {
   static func todoByID(id: Int, completionHandler: @escaping (Result<Todo>) -> Void) {
     Alamofire.request(TodoRouter.get(id))
@@ -28,7 +32,7 @@ extension Todo {
     do {
       let newTodoAsJSONData = try encoder.encode(self)
       Alamofire.request(TodoRouter.create(newTodoAsJSONData))
-        .responseJSON { response in
+        .responseData { response in
           guard response.result.error == nil else {
             // got an error in getting the data, need to handle it
             print(response.result.error!)
@@ -37,20 +41,22 @@ extension Todo {
           }
           
           // make sure we got JSON and it's a dictionary
-          guard let json = response.result.value as? [String: Any] else {
-            print("didn't get todo object as JSON from API")
+          guard let responseData = response.result.value else {
+            print("didn't get JSON data from API")
             completionHandler(.failure(BackendError.parsing(reason:
-              "Did not get JSON dictionary in response")))
+              "Did not get JSON data in response")))
             return
           }
           
-          // turn JSON in to Todo object
-          guard let idNumber = json["id"] as? Int else {
-            completionHandler(.failure(BackendError.parsing(reason:
-              "Could not get id number from JSON")))
-            return
+          let decoder = JSONDecoder()
+          do {
+            let createResult = try decoder.decode(CreateTodoResult.self, from: responseData)
+            completionHandler(.success(createResult.id))
+          } catch {
+            print("error parsing response from POST on /todos")
+            print(error)
+            completionHandler(.failure(error))
           }
-          completionHandler(.success(idNumber))
       }
     } catch {
       print(error)

@@ -13,7 +13,30 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    getUser(1)
+    updateEmail()
+  }
+
+  func updateEmail() {
+    User.userByID(1, completionHandler: { (user, error) in
+      if let error = error {
+        // got an error in getting the data, need to handle it
+        print("error calling GET user")
+        print(error)
+        return
+      }
+      guard let user = user else {
+        print("error getting user: result is nil")
+        return
+      }
+      debugPrint(user)
+
+      var editedUser = user
+      editedUser.email = "a@aol.com"
+      editedUser.update() {
+        error in
+        print(error ?? "no error")
+      }
+    })
   }
 
   func fetchTodo() {
@@ -82,7 +105,7 @@ class ViewController: UIViewController {
       // success :)
       debugPrint(user)
       print(user.name)
-      print(user.address.city)
+      print(user.city)
     })
   }
 }
